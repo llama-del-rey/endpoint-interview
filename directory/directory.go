@@ -2,6 +2,7 @@ package directory
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -69,21 +70,27 @@ func DeleteDir(path string) {
 	dirName := parts[len(parts)-1]
 	if _, exists := parentDir.Subdirectories[dirName]; exists {
 		delete(parentDir.Subdirectories, dirName)
-		fmt.Printf("DELETE %s\n", path)
 	} else {
 		fmt.Printf("Cannot delete %s - %s does not exist\n", path, parts[len(parts)-2])
 	}
 }
 
-// ListDirs lists all directories starting from the specified directory.
+// ListDirs lists all directories starting from the specified directory, sorted alphabetically.
 func ListDirs(dir *Directory, prefix string) {
 	if dir.Name != "" {
 		fmt.Println(prefix + dir.Name)
 		prefix += "  "
 	}
 
-	for _, subDir := range dir.Subdirectories {
-		ListDirs(subDir, prefix)
+	// Sort the subdirectory names alphabetically
+	var subdirNames []string
+	for name := range dir.Subdirectories {
+		subdirNames = append(subdirNames, name)
+	}
+	sort.Strings(subdirNames)
+
+	for _, name := range subdirNames {
+		ListDirs(dir.Subdirectories[name], prefix)
 	}
 }
 

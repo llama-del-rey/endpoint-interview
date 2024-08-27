@@ -43,12 +43,14 @@ func ProcessCommandsFromFile(fileName string) {
 				fmt.Println("Invalid MOVE command")
 			}
 		case "DELETE":
+			fmt.Printf("DELETE %s\n", parts[1])
 			if len(parts) == 2 {
 				directory.DeleteDir(parts[1])
 			} else {
 				fmt.Println("Invalid DELETE command")
 			}
 		case "LIST":
+			fmt.Println("LIST")
 			directory.ListDirs(directory.Root(), "")
 		default:
 			fmt.Printf("Unknown command: %s\n", parts[0])
