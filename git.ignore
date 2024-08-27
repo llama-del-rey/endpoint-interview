@@ -1,0 +1,46 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Build artifacts
+/build/
+/bin/
+/out/
+/dist/
+
+# Dependency directories
+/vendor/
+
+# Generated files
+*.gen.go
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Test binary and coverage output
+*.test
+*.cover
+*.cov
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Go modules
+go.sum
