@@ -19,7 +19,12 @@ It simulates directory operations without interacting with the filesystem.
   |__ main.go                    # Entry point for the CLI
   |__ resources/    
     |__ input.txt                # Example input file with commands
+    |__ expected_output.txt      # Expected output after running the commands from input.txt file
 ```
+
+## Compatibility
+
+This setup has been tested only on Apple M1. 
 
 ## Requirements
 
