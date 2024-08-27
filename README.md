@@ -39,7 +39,7 @@ git clone git@github.com:llama-del-rey/endpoint-interview.git
 cd endpoint-interview
 ```
 
-2. From the root of the repo run the `FROMFILE` command to directory operations from an input file:
+2. From the root of the repo run the `FROMFILE` command to get directory operations from an input file:
 
 ```bash
 ./dirmanager FROMFILE resources/input.txt
